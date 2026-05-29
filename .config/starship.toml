@@ -1,0 +1,57 @@
+add_newline = false
+
+format = """\
+($cmd_duration
+)[ ](deep_purple)$username$sudo[ ](deep_purple bg:purple)$directory[ ](purple bg:pink)$git_branch$git_commit$git_state$git_status$character"""
+
+right_format = """$time"""
+
+palette = 'custom'
+
+[palettes.custom]
+purple = '#9A348E'
+pink = '#F542CB'
+deep_purple = '#6E17BF'
+
+[character]
+format = '[ ](bold pink)'
+
+[cmd_duration]
+format = 'Last command took [$duration]($style)'
+
+[directory]
+format = '[$path ]($style)'
+style = 'bg:purple'
+
+[git_branch]
+always_show_remote = true
+format = '[ on $remote_name/$branch]($style)'
+style = 'bg:pink'
+
+[git_commit]
+style = 'bg:pink'
+
+[git_state]
+style = 'bg:pink'
+
+[git_status]
+conflicted = '!'
+modified = 'M'
+untracked = 'U'
+style = 'bg:pink'
+format = '([\[$all_status$ahead_behind\] ]($style))'
+
+[sudo]
+disabled = false
+format = '[sudo ]($style)'
+style = 'bold fg:green bg:deep_purple'
+
+[time]
+disabled = false
+format = '[$time]($style)'
+use_12hr = true
+
+[username]
+format = '[$user ]($style)'
+show_always = true
+style_user = 'bg:deep_purple'
